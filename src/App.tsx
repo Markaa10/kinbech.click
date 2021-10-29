@@ -1,7 +1,8 @@
+import AuthPage from "pages/auth";
 import React from "react";
 
 const App = () => {
-  return <div>kinbech.click</div>;
+  return <AuthPage />;
 };
 
 export default App;
