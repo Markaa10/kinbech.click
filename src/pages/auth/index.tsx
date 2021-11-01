@@ -1,19 +1,34 @@
+import React, { useState } from "react";
 import {
   Button,
   Checkbox,
   FormControlLabel,
   Grid,
   Link,
-  TextField,
-  Avatar,
   Box,
   Typography,
   Paper,
+  InputAdornment,
+  IconButton,
+  FormControl,
+  Input,
+  InputLabel,
 } from "@mui/material";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { makeStyles } from "@mui/styles";
+
 import { LoginIllustration } from "assets/illustrations";
-import React from "react";
 
 const AuthPage = () => {
+  const classes = useStyles();
+
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const handleClickShowPassword = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   return (
     <Grid container component="main" sx={{ height: "100vh" }}>
       <Grid
@@ -38,75 +53,92 @@ const AuthPage = () => {
             alignItems: "flex-start",
           }}
         >
-          <Typography component="h1" variant="h5">
+          <Typography variant="h2" component="h2">
             Welcome Back
           </Typography>
-          <Typography component="p">Login as User</Typography>
+          <Typography variant="body1" component="p" marginTop={"26px"}>
+            Login as Salesman
+          </Typography>
+
           <Box
             component="form"
             noValidate
+            width="100%"
             // onSubmit={handleSubmit}
-            sx={{ mt: 1 }}
+            sx={{ mt: "156px" }}
           >
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
+            <FormControl
+              sx={{ m: 1, width: "100%", mb: "82px" }}
               variant="standard"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              variant="standard"
-            />
+            >
+              <InputLabel htmlFor="standard-adornment-email">
+                Email Address
+              </InputLabel>
+              <Input id="standard-adornment-email" type="email" fullWidth />
+            </FormControl>
 
-            <FormControlLabel
-              control={
-                <Grid container>
-                  <Grid item xs>
-                    <Checkbox value="remember" color="primary" />
-                  </Grid>
-                  <Grid item>
-                    <Link href="#" variant="body2">
-                      Forgot password?
-                    </Link>
-                  </Grid>
-                </Grid>
-              }
-              label="Remember me"
-            />
+            <FormControl sx={{ m: 1, width: "100%" }} variant="standard">
+              <InputLabel htmlFor="standard-adornment-password">
+                Password
+              </InputLabel>
+              <Input
+                id="standard-adornment-password"
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              marginTop={"56px"}
+              marginBottom={"49px"}
+            >
+              <Grid item>
+                <FormControlLabel
+                  control={<Checkbox value="remember" color="primary" />}
+                  label="Remember me"
+                />
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+            </Box>
 
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              className={classes.login}
             >
-              Sign In
+              LOGIN
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
+            <Box display="inline-flex" sx={{ mt: 6 }}>
+              <Typography variant="body1" component="p" color="#787878">
+                Don’t have an account?
+              </Typography>
+              <Link>
+                <Typography
+                  variant="body1"
+                  component="p"
+                  color="#000"
+                  fontWeight="bold"
+                >
+                  Register here!
+                </Typography>
+              </Link>
+            </Box>
           </Box>
         </Box>
       </Grid>
@@ -115,3 +147,17 @@ const AuthPage = () => {
 };
 
 export default AuthPage;
+
+const useStyles = makeStyles({
+  login: {
+    height: 56,
+    background: "linear-gradient(180deg, #4CACFC -12.5%, #3946F5 100%)",
+    fontFamily: "Roboto Condensed",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    fontSize: "30px !important",
+    lineHeight: "35px !important",
+    textAlign: "right",
+    letterSpacing: "0.1em !important",
+  },
+});
