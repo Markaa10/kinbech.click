@@ -1,9 +1,11 @@
+import { Body1 } from "components/texts";
 import React from "react";
 import styled from "styled-components";
 import Flex from "../../flex";
 
 type IOutlinedInputProps = {
   label: string;
+  width?: string;
   icon?: JSX.Element;
   placeholder?: string;
   marginTop?: number;
@@ -11,13 +13,7 @@ type IOutlinedInputProps = {
   type?: "text" | "email" | "password";
 };
 
-const Label = styled.label`
-  font-family: Sen;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-
+const Label = styled(Body1)`
   color: #373737;
   margin-bottom: 9px;
 `;
@@ -59,6 +55,7 @@ const OutlinedInput = (props: IOutlinedInputProps) => {
     marginTop = 0,
     type = "text",
     marginBottom = 34,
+    width = "100%",
   } = props;
 
   return (
@@ -67,6 +64,7 @@ const OutlinedInput = (props: IOutlinedInputProps) => {
       alignItems="flex-start"
       marginTop={marginTop}
       marginBottom={marginBottom}
+      width={width}
     >
       <Label>{label}</Label>
 
