@@ -13,9 +13,7 @@ import Button from "components/buttons/button";
 
 type ILoginPageProps = { setIsSignup: any };
 
-const Container = styled(Flex)`
-  height: 100vh;
-`;
+const Container = styled(Flex)``;
 
 const Image = styled.img`
   display: none;
@@ -33,7 +31,7 @@ const Form = styled.form`
   padding: 59px 35px;
   width: 100%;
 
-  box-shadow: @media (min-width: 765px) {
+  @media (min-width: 765px) {
     width: 40%;
   }
 `;

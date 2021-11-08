@@ -40,11 +40,17 @@ const Button = (props: IButtonProps) => {
     text,
     width = "100%",
     marginTop = 0,
+    marginBottom = 0,
     OnClick = () => console.log("Button"),
   } = props;
 
   return (
-    <Container marginTop={marginTop} width={width} onClick={OnClick}>
+    <Container
+      marginTop={marginTop}
+      marginBottom={marginBottom}
+      width={width}
+      onClick={OnClick}
+    >
       {text}
     </Container>
   );
