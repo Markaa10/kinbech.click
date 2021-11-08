@@ -1,31 +1,35 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Checkbox,
-  FormControlLabel,
-  Grid,
-  Link,
-  Box,
-  Typography,
-  Paper,
-  InputAdornment,
-  IconButton,
-  FormControl,
-  Input,
-  InputLabel,
-} from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { makeStyles } from "@mui/styles";
+
+import styled from "styled-components";
 
 import { LoginIllustration } from "assets/illustrations";
+import { EyeIcon } from "assets/icons";
+import Flex from "components/flex";
+import StandardInput from "components/input/standard";
+import { Title2, Body1, LinkText } from "components/texts";
+import Checkbox from "components/input/checkbox";
+import TextButton from "components/buttons/text";
+import Button from "components/buttons/button";
 
 type ILoginPageProps = { setIsSignup: any };
 
+const Container = styled(Flex)`
+  height: 100vh;
+`;
+
+const Image = styled.img`
+  width: 70%;
+  height: 100vh;
+`;
+
+const Form = styled.form`
+  margin-top: 160px;
+  display: flex;
+  flex-direction: column;
+`;
+
 const LoginPage = (props: ILoginPageProps) => {
   const { setIsSignup } = props;
-
-  const classes = useStyles();
 
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -34,20 +38,32 @@ const LoginPage = (props: ILoginPageProps) => {
   };
 
   return (
-    <Grid container component="main" sx={{ height: "100vh" }}>
-      <Grid
-        item
-        xs={false}
-        sm={4}
-        md={7}
-        sx={{
-          backgroundImage: `url(${LoginIllustration})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={3} square>
+    <Container>
+      <Image src={LoginIllustration} />
+      <div style={{ width: "30%", padding: "0 35px" }}>
+        <Title2>Welcome Back</Title2>
+        <Body1 marginTop={26}>Login as Salesman</Body1>
+
+        <Form>
+          <StandardInput placeholder="Enter your email address" />
+          <StandardInput
+            placeholder="Enter your password"
+            marginTop={82}
+            icon={<EyeIcon />}
+          />
+
+          <Flex marginTop={58}>
+            <Checkbox label="Remember me" width="50%" />
+            <TextButton text="Forgot password?" />
+          </Flex>
+
+          <Button text="LOGIN" marginTop={49} marginBottom={48} />
+
+          <LinkText text="Don’t have an account?" link="Register here!" />
+        </Form>
+      </div>
+
+      {/* <Grid item xs={12} sm={8} md={5} component={Paper} elevation={3} square>
         <Box
           sx={{
             my: 8,
@@ -63,7 +79,6 @@ const LoginPage = (props: ILoginPageProps) => {
           <Typography variant="body1" component="p" marginTop={"26px"}>
             Login as Salesman
           </Typography>
-
           <Box component="form" noValidate width="100%" sx={{ mt: "156px" }}>
             <FormControl
               sx={{ m: 1, width: "100%", mb: "82px" }}
@@ -139,23 +154,9 @@ const LoginPage = (props: ILoginPageProps) => {
             </Box>
           </Box>
         </Box>
-      </Grid>
-    </Grid>
+      </Grid> */}
+    </Container>
   );
 };
 
 export default LoginPage;
-
-const useStyles = makeStyles({
-  login: {
-    height: 56,
-    background: "linear-gradient(180deg, #4CACFC -12.5%, #3946F5 100%)",
-    fontFamily: "Roboto Condensed",
-    fontStyle: "normal",
-    fontWeight: "normal",
-    fontSize: "30px !important",
-    lineHeight: "35px !important",
-    textAlign: "right",
-    letterSpacing: "0.1em !important",
-  },
-});

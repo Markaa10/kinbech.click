@@ -1,24 +1,5 @@
-import React, { useState } from "react";
-import {
-  Button,
-  Checkbox,
-  FormControlLabel,
-  Grid,
-  Link,
-  Box,
-  Typography,
-  Paper,
-  InputAdornment,
-  IconButton,
-  FormControl,
-  Input,
-  InputLabel,
-} from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { makeStyles } from "@mui/styles";
+import { useState } from "react";
 
-import { LoginIllustration } from "assets/illustrations";
 import SignupPage from "./signup";
 import LoginPage from "./login";
 
