@@ -8,18 +8,11 @@ import SelectInput from "components/input/select";
 import { EyeIcon } from "assets/icons";
 import Checkbox from "components/input/checkbox";
 import Button from "components/buttons/button";
+import { url } from "inspector";
 
 type ISignupPageProps = { setIsSignup: any };
 
-const Image = styled.img`
-  width: 100%;
-  objectfit: cover;
-`;
-
 const Form = styled.form`
-  position: absolute;
-  top: 51px;
-  bottom: 47px;
   height: 100%;
   width: 50%;
   display: flex;
@@ -44,8 +37,12 @@ const SignupPage = (props: ISignupPageProps) => {
   //   setCountry(e.target.value);
   // };
   return (
-    <>
-      <Image src={SignupIllustration} alt="signupIllustration" />
+    <div
+      style={{
+        backgroundImage: `url(${SignupIllustration})`,
+        padding: "47px 0",
+      }}
+    >
       <Form>
         <Title2 marginTop={29}>Register Here</Title2>
         <Body1 marginTop={26} marginBottom={62}>
@@ -97,16 +94,15 @@ const SignupPage = (props: ISignupPageProps) => {
           marginTop={15}
           marginBottom={75}
         />
-
         <Checkbox
           label="
-          I have read and agree to terms of use."
+        I have read and agree to terms of use."
           marginTop={34}
           marginBottom={75}
         />
-        <Button text="SIGNUP" />
+        <Button text="SIGNUP" marginBottom={21} />
       </Form>
-    </>
+    </div>
   );
 };
 
