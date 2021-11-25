@@ -1,10 +1,15 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AuthPage from "pages/auth";
+import SalesmanDashboardPage from "pages/salesman/dashboard";
 
 const App = () => {
   return (
-    <>
-      <AuthPage />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AuthPage />} path="/auth" />
+        <Route element={<SalesmanDashboardPage />} path="/dashboard" />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

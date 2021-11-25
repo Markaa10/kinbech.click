@@ -8,7 +8,7 @@ import SelectInput from "components/input/select";
 import { EyeIcon } from "assets/icons";
 import Checkbox from "components/input/checkbox";
 import Button from "components/buttons/button";
-import { url } from "inspector";
+import { useNavigate } from "react-router-dom";
 
 type ISignupPageProps = { setIsSignup: any };
 
@@ -28,6 +28,8 @@ const Form = styled.form`
 const SignupPage = (props: ISignupPageProps) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [country, setCountry] = useState<string>("");
+
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
     setShowPassword((prev) => !prev);
@@ -100,7 +102,11 @@ const SignupPage = (props: ISignupPageProps) => {
           marginTop={34}
           marginBottom={75}
         />
-        <Button text="SIGNUP" marginBottom={21} />
+        <Button
+          text="SIGNUP"
+          marginBottom={21}
+          OnClick={() => navigate("/dashboard")}
+        />
       </Form>
     </div>
   );

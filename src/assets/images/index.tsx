@@ -1,1 +1,1 @@
-export { default as loginIllustration } from "./login-illustration.png";
+export { default as user } from "./user.png";
