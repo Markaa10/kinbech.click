@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import SidebarContainer from "containers/sidebar";
+import SalesmanDashboardContainer from "containers/salesman/dashboard";
 
 import Navbar from "components/navbar";
 import BannerCard from "components/cards/banner";
+import IconCard from "components/cards/Icon";
 
 const Container = styled.div`
   ${tw`
@@ -24,11 +26,7 @@ function SalesmanDashboardPage() {
   const getView = () => {
     switch (view) {
       case "Home":
-        return (
-          <>
-            <BannerCard />
-          </>
-        );
+        return <SalesmanDashboardContainer />;
 
       default:
         return <h1>Default</h1>;

@@ -15,6 +15,7 @@ const Checkbox = (props: ICheckboxProps) => {
   return (
     <Flex
       width={width}
+      alignItems='flex-end'
       justifyContent="flex-start"
       marginBottom={marginBottom}
       marginTop={marginTop}

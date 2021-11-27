@@ -4,6 +4,8 @@ import styled from "styled-components";
 type ITextProps = {
   marginTop?: number;
   marginBottom?: number;
+  marginRight?: number;
+  marginLeft?: number;
   color?: string;
 };
 
@@ -17,6 +19,8 @@ export const Title2 = styled.h2<ITextProps>`
   color: #3c55f6;
   margin-top: ${(p) => (p.marginTop ? p.marginTop : 0)}px;
   margin-bottom: ${(p) => (p.marginBottom ? p.marginBottom : 0)}px;
+  margin-right: ${(p) => (p.marginRight ? p.marginRight : 0)}px;
+  margin-left: ${(p) => (p.marginLeft ? p.marginLeft : 0)}px;
 `;
 
 export const Title3 = styled.h3<ITextProps>`
@@ -30,6 +34,8 @@ export const Title3 = styled.h3<ITextProps>`
 
   margin-top: ${(p) => (p.marginTop ? p.marginTop : 0)}px;
   margin-bottom: ${(p) => (p.marginBottom ? p.marginBottom : 0)}px;
+  margin-right: ${(p) => (p.marginRight ? p.marginRight : 0)}px;
+  margin-left: ${(p) => (p.marginLeft ? p.marginLeft : 0)}px;
 `;
 
 export const Title5 = styled.h5<ITextProps>`
@@ -42,6 +48,8 @@ export const Title5 = styled.h5<ITextProps>`
 
   margin-top: ${(p) => (p.marginTop ? p.marginTop : 0)}px;
   margin-bottom: ${(p) => (p.marginBottom ? p.marginBottom : 0)}px;
+  margin-right: ${(p) => (p.marginRight ? p.marginRight : 0)}px;
+  margin-left: ${(p) => (p.marginLeft ? p.marginLeft : 0)}px;
 `;
 
 export const Body1 = styled.p<ITextProps>`
@@ -54,6 +62,8 @@ export const Body1 = styled.p<ITextProps>`
   color: ${(p) => (p.color ? p.color : "#000000")};
   margin-top: ${(p) => (p.marginTop ? p.marginTop : 0)}px;
   margin-bottom: ${(p) => (p.marginBottom ? p.marginBottom : 0)}px;
+  margin-right: ${(p) => (p.marginRight ? p.marginRight : 0)}px;
+  margin-left: ${(p) => (p.marginLeft ? p.marginLeft : 0)}px;
 `;
 
 export const Link = styled.p`

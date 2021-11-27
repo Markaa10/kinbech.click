@@ -10,7 +10,7 @@ const Container = styled.div`
         bg-primary
         p-5
         w-1/2
-        ml-11 h-52
+        h-52 
     `}
   border-radius: 20px;
   position: relative;

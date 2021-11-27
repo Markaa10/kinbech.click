@@ -10,3 +10,6 @@ export { default as UserIcon } from "./UserIcon";
 export { default as SearchIcon } from "./SearchIcon";
 export { default as EnvelopeIcon } from "./EnvelopeIcon";
 export { default as BellIcon } from "./BellIcon";
+export { default as PuzzlePieceIcon } from "./PuzzlePieceIcon";
+export { default as LockIcon } from "./LockIcon";
+export { default as PiechartIcon } from "./PiechartIcon";
