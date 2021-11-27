@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 
 import { LoginIllustration } from "assets/illustrations";
 import { EyeIcon } from "assets/icons";
@@ -39,6 +40,7 @@ const Form = styled.form`
 const LoginPage = (props: ILoginPageProps) => {
   const { setIsSignup } = props;
 
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const handleClickShowPassword = () => {
@@ -48,8 +50,6 @@ const LoginPage = (props: ILoginPageProps) => {
   return (
     <Container alignItems="flex-start">
       <Image src={LoginIllustration} />
-
-      <img style={{ objectFit: "cover" }} />
       <Form>
         <Title2>Welcome Back</Title2>
         <Body1 marginTop={26} marginBottom={160}>
@@ -68,7 +68,12 @@ const LoginPage = (props: ILoginPageProps) => {
           <TextButton text="Forgot password?" />
         </Flex>
 
-        <Button text="LOGIN" marginTop={49} marginBottom={48} />
+        <Button
+          text="LOGIN"
+          OnClick={() => navigate("/dashboard")}
+          marginTop={49}
+          marginBottom={48}
+        />
 
         <LinkText
           text="Don’t have an account?"
