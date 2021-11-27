@@ -49,10 +49,26 @@ const Avatar = styled.img`
   cursor: pointer;
 `;
 
-function Navbar() {
+type INavbarProps = { view: string };
+function Navbar(props: INavbarProps) {
+  const { view } = props;
+
+  const getView = () => {
+    switch (view) {
+      case "Home":
+        return "DASHBOARD";
+
+      case "Cart":
+        return "POST AD";
+
+      default:
+        return "DASHBOARD";
+    }
+  };
+
   return (
     <Container>
-      <Title3>Dashboard</Title3>
+      <Title3>{getView()}</Title3>
 
       <ActionsContainer>
         <StandardInput placeholder="Search" icon={<SearchIcon />} />

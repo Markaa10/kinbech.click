@@ -16,3 +16,4 @@ export { default as PiechartIcon } from "./PiechartIcon";
 export { default as SignoutIcon } from "./SignoutIcon";
 export { default as PhoneIcon } from "./PhoneIcon";
 export { default as PinIcon } from "./PinIcon";
+export { default as ArrowDownIcon } from "./ArrowDownIcon";

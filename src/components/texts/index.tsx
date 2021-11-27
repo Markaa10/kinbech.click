@@ -52,6 +52,19 @@ export const Title5 = styled.h5<ITextProps>`
   margin-left: ${(p) => (p.marginLeft ? p.marginLeft : 0)}px;
 `;
 
+export const Title6 = styled.h6<ITextProps>`
+  ont-family: Sen;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: ${(p) => (p.color ? p.color : "#373737")};
+  margin-top: ${(p) => (p.marginTop ? p.marginTop : 0)}px;
+  margin-bottom: ${(p) => (p.marginBottom ? p.marginBottom : 0)}px;
+  margin-right: ${(p) => (p.marginRight ? p.marginRight : 0)}px;
+  margin-left: ${(p) => (p.marginLeft ? p.marginLeft : 0)}px;
+`;
+
 export const Body1 = styled.p<ITextProps>`
   font-family: Roboto Condensed;
   font-style: normal;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import SidebarContainer from "containers/sidebar";
 import SalesmanDashboardContainer from "containers/salesman/dashboard";
+import PostAdContainer from "containers/salesman/postad";
 
 import Navbar from "components/navbar";
 import Footer from "components/footer";
@@ -27,6 +28,9 @@ function SalesmanDashboardPage() {
       case "Home":
         return <SalesmanDashboardContainer />;
 
+      case "Cart":
+        return <PostAdContainer />;
+
       default:
         return <h1>Default</h1>;
     }
@@ -43,7 +47,7 @@ function SalesmanDashboardPage() {
           overflowX: "hidden",
         }}
       >
-        <Navbar />
+        <Navbar view={view} />
         {getView()}
         <Footer />
       </div>
