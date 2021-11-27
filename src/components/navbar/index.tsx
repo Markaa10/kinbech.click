@@ -13,7 +13,7 @@ const Container = styled.nav`
    justify-between
     px-2
      py-3.5
-      w-full`}
+      w-auto`}
 
   background: #FFFFFF;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);

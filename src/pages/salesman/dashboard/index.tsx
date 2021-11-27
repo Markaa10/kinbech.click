@@ -5,8 +5,7 @@ import SidebarContainer from "containers/sidebar";
 import SalesmanDashboardContainer from "containers/salesman/dashboard";
 
 import Navbar from "components/navbar";
-import BannerCard from "components/cards/banner";
-import IconCard from "components/cards/Icon";
+import Footer from "components/footer";
 
 const Container = styled.div`
   ${tw`
@@ -36,9 +35,17 @@ function SalesmanDashboardPage() {
   return (
     <Container>
       <SidebarContainer setView={setView} />
-      <div style={{ maxWidth: "100%", width: "94.6%" }}>
+      <div
+        style={{
+          width: "100%",
+          maxHeight: "100vh",
+          overflow: "scroll",
+          overflowX: "hidden",
+        }}
+      >
         <Navbar />
         {getView()}
+        <Footer />
       </div>
     </Container>
   );

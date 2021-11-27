@@ -66,6 +66,21 @@ export const Body1 = styled.p<ITextProps>`
   margin-left: ${(p) => (p.marginLeft ? p.marginLeft : 0)}px;
 `;
 
+export const Body3 = styled.p<ITextProps>`
+  font-family: Telex;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  cursor: pointer;
+
+  color: #373737;
+  margin-top: ${(p) => (p.marginTop ? p.marginTop : 0)}px;
+  margin-bottom: ${(p) => (p.marginBottom ? p.marginBottom : 0)}px;
+  margin-right: ${(p) => (p.marginRight ? p.marginRight : 0)}px;
+  margin-left: ${(p) => (p.marginLeft ? p.marginLeft : 0)}px;
+`;
 export const Link = styled.p`
   font-family: Sen;
   font-style: normal;

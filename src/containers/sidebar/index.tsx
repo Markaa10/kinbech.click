@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 import { colors } from "theme";
 import tw from "twin.macro";
 import {
@@ -10,13 +12,14 @@ import {
   CommentsIcon,
   HomeIcon,
   MobileIcon,
+  SignoutIcon,
   UserIcon,
 } from "assets/icons";
 
 const Container = styled.nav`
   ${tw`
     
-    bg-primary
+    bg-primary h-screen
     max-h-screen
     min-h-screen
   `}
@@ -50,6 +53,8 @@ const Link = styled.li`
 type ISidebarContainerProps = { setView: any };
 function SidebarContainer(props: ISidebarContainerProps) {
   const { setView } = props;
+
+  const navigate = useNavigate();
 
   const [activeLink, setActiveLink] = useState<string>("Home");
 
@@ -158,6 +163,18 @@ function SidebarContainer(props: ISidebarContainerProps) {
           )
         )}
       </LinksContainer>
+
+      <Link
+        style={{
+          position: "absolute",
+          left: 20,
+          bottom: "2.3rem",
+          margin: "0 auto",
+        }}
+        onClick={() => navigate("/auth")}
+      >
+        <SignoutIcon />
+      </Link>
     </Container>
   );
 }

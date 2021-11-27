@@ -23,7 +23,7 @@ const TopContainer = styled.section`
 `;
 
 const BottomContainer = styled.section`
-  ${tw`flex justify-between`}
+  ${tw`flex justify-between mb-5`}
 `;
 
 const RightCards = styled.section`

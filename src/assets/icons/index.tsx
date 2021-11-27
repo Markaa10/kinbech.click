@@ -13,3 +13,6 @@ export { default as BellIcon } from "./BellIcon";
 export { default as PuzzlePieceIcon } from "./PuzzlePieceIcon";
 export { default as LockIcon } from "./LockIcon";
 export { default as PiechartIcon } from "./PiechartIcon";
+export { default as SignoutIcon } from "./SignoutIcon";
+export { default as PhoneIcon } from "./PhoneIcon";
+export { default as PinIcon } from "./PinIcon";
