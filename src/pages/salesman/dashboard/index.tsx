@@ -4,13 +4,18 @@ import tw from "twin.macro";
 import SidebarContainer from "containers/sidebar";
 
 import Navbar from "components/navbar";
+import BannerCard from "components/cards/banner";
 
 const Container = styled.div`
   ${tw`
     flex
     items-start
-    
+    w-full
   `}
+`;
+
+const ViewContainer = styled.div`
+  ${tw`w-full`}
 `;
 
 function SalesmanDashboardPage() {
@@ -19,17 +24,24 @@ function SalesmanDashboardPage() {
   const getView = () => {
     switch (view) {
       case "Home":
-        return <Navbar />;
+        return (
+          <>
+            <BannerCard />
+          </>
+        );
 
       default:
-        return <Navbar />;
+        return <h1>Default</h1>;
     }
   };
 
   return (
     <Container>
       <SidebarContainer setView={setView} />
-      {getView()}
+      <div style={{ maxWidth: "100%", width: "94.6%" }}>
+        <Navbar />
+        {getView()}
+      </div>
     </Container>
   );
 }

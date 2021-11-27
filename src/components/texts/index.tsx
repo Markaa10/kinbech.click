@@ -32,6 +32,18 @@ export const Title3 = styled.h3<ITextProps>`
   margin-bottom: ${(p) => (p.marginBottom ? p.marginBottom : 0)}px;
 `;
 
+export const Title5 = styled.h5<ITextProps>`
+  font-family: Sen;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: ${(p) => (p.color ? p.color : "#3c55f6")};
+
+  margin-top: ${(p) => (p.marginTop ? p.marginTop : 0)}px;
+  margin-bottom: ${(p) => (p.marginBottom ? p.marginBottom : 0)}px;
+`;
+
 export const Body1 = styled.p<ITextProps>`
   font-family: Roboto Condensed;
   font-style: normal;
