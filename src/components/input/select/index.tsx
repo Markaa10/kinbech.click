@@ -11,11 +11,13 @@ const Label = styled(Body1)`
 `;
 
 const Select = styled.select`
-  width: 90%;
+  width: inherit;
   height: 42px;
   padding: 0 25px;
 
+  background: #fff;
   outline: none;
+  border: 1px solid #767676;
   border-radius: 5px;
 `;
 
@@ -23,7 +25,7 @@ const SelectInput = (props: ISelectInputProps) => {
   const { label } = props;
 
   return (
-    <Flex direction="column" alignItems="flex-start">
+    <Flex direction="column">
       <Label>{label}</Label>
       <Select>
         <option>Nepal</option>

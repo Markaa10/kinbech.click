@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-
 import { LoginIllustration } from "assets/illustrations";
 import { EyeIcon } from "assets/icons";
 import Flex from "components/flex";
@@ -14,15 +13,18 @@ import Button from "components/buttons/button";
 
 type ILoginPageProps = { setIsSignup: any };
 
-const Container = styled(Flex)``;
+const Container = styled(Flex)`
+  max-height: 100vh;
+`;
 
 const Image = styled.img`
   display: none;
   object-fit: cover;
+  width: 50%;
 
   @media (min-width: 765px) {
     display: block;
-    height: 100vh;
+    height: 99vh;
   }
 `;
 
@@ -48,7 +50,7 @@ const LoginPage = (props: ILoginPageProps) => {
   };
 
   return (
-    <Container alignItems="flex-start">
+    <Container>
       <Image src={LoginIllustration} />
       <Form>
         <Title2>Welcome Back</Title2>
@@ -63,7 +65,7 @@ const LoginPage = (props: ILoginPageProps) => {
           icon={<EyeIcon />}
         />
 
-        <Flex marginTop={58}>
+        <Flex marginTop={3.625}>
           <Checkbox label="Remember me" width="50%" />
           <TextButton text="Forgot password?" />
         </Flex>

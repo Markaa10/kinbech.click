@@ -21,7 +21,7 @@ const Form = styled.form`
   background: #ffffff;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  padding: 0 88px;
+  padding: 1.8rem 88px;
   margin: 0 25%;
 `;
 
@@ -41,12 +41,12 @@ const SignupPage = (props: ISignupPageProps) => {
   return (
     <div
       style={{
-        backgroundImage: `url(${SignupIllustration})`,
+        background: `url(${SignupIllustration}) no-repeat center/cover`,
         padding: "47px 0",
       }}
     >
       <Form>
-        <Title2 marginTop={29}>Register Here</Title2>
+        <Title2>Register Here</Title2>
         <Body1 marginTop={26} marginBottom={62}>
           Signup as Salesman
         </Body1>
@@ -70,41 +70,36 @@ const SignupPage = (props: ISignupPageProps) => {
           icon={<EyeIcon />}
         />
 
-        <Flex alignItems="flex-start">
+        <Flex gap={2.6}>
           <SelectInput label="Country" />
-          <OutlinedInput label="Phone" placeholder="01-552860" width="90%" />
+          <OutlinedInput label="Phone" placeholder="01-552860" />
         </Flex>
 
         <OutlinedInput label="Mobile" placeholder="+977 9841468940" />
 
-        <Flex alignItems="flex-start">
-          <OutlinedInput
-            label="Street"
-            placeholder="Harisiddhi-8"
-            width="47%"
-          />
-
-          <OutlinedInput label="City" placeholder="Lalitpur" width="47%" />
+        <Flex gap={2.6}>
+          <OutlinedInput label="Street" placeholder="Harisiddhi-8" />
+          <OutlinedInput label="City" placeholder="Lalitpur" />
         </Flex>
 
         <Checkbox
           label="I do not want to subscribe to site newsletter."
-          marginTop={64}
+          marginTop={4}
         />
         <Checkbox
           label="Hide my phone number in my ads (only contact from email)"
-          marginTop={15}
-          marginBottom={75}
+          marginTop={0.9}
+          marginBottom={4.6}
         />
         <Checkbox
           label="
         I have read and agree to terms of use."
-          marginTop={34}
-          marginBottom={75}
+          marginTop={2.125}
+          marginBottom={4.6}
         />
         <Button
           text="SIGNUP"
-          marginBottom={21}
+          marginBottom={1.31}
           OnClick={() => navigate("/dashboard")}
         />
       </Form>

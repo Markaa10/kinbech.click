@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import SidebarContainer from "containers/sidebar";
 import SalesmanDashboardContainer from "containers/salesman/dashboard";
 import PostAdContainer from "containers/salesman/postad";
+import MyAdsContainer from "containers/salesman/myads";
 
 import Navbar from "components/navbar";
 import Footer from "components/footer";
@@ -16,10 +17,6 @@ const Container = styled.div`
   `}
 `;
 
-const ViewContainer = styled.div`
-  ${tw`w-full`}
-`;
-
 function SalesmanDashboardPage() {
   const [view, setView] = useState<string>("Home");
 
@@ -30,6 +27,9 @@ function SalesmanDashboardPage() {
 
       case "Cart":
         return <PostAdContainer />;
+
+      case "Clone":
+        return <MyAdsContainer />;
 
       default:
         return <h1>Default</h1>;

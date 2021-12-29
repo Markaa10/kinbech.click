@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface IFlexProps {
   style?: any;
+  display?: "flex" | "inline-flex";
   direction?: "row" | "column";
   alignItems?: "center" | "flex-start" | "flex-end" | "stretch" | "baseline";
   justifyContent?:
@@ -16,41 +17,49 @@ interface IFlexProps {
   children: JSX.Element | JSX.Element[];
   marginTop?: number;
   marginBottom?: number;
+  gap?: number;
 }
 
 type IContainerProps = {
+  display: string;
   direction: string;
   alignItems: string;
   justifyContent: string;
   width: string;
   marginTop: number;
   marginBottom: number;
+  gap: number;
 };
 
 const Container = styled.div<IContainerProps>`
-  display: flex;
+  display: ${(p) => p.display};
   flex-direction: ${(p) => p.direction};
   align-items: ${(p) => p.alignItems};
   justify-content: ${(p) => p.justifyContent};
   width: ${(p) => p.width};
-  margin-top: ${(p) => p.marginTop}px;
-  margin-bottom: ${(p) => p.marginBottom}px;
+  margin-top: ${(p) => p.marginTop}rem;
+  margin-bottom: ${(p) => p.marginBottom}rem;
+  gap: ${(p) => p.gap}rem;
 `;
 
 const Flex = (props: IFlexProps) => {
   const {
     children,
+    display = "inline-flex",
     direction = "row",
-    alignItems = "center",
-    justifyContent = "space-between",
+    alignItems = "flex-start",
+    justifyContent = "flex-start",
     style,
     width = "100%",
     marginTop = 0,
     marginBottom = 0,
+    gap = 0,
   } = props;
 
   return (
     <Container
+      display={display}
+      gap={gap}
       direction={direction}
       alignItems={alignItems}
       justifyContent={justifyContent}

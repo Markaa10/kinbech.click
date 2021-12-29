@@ -61,6 +61,9 @@ function Navbar(props: INavbarProps) {
       case "Cart":
         return "POST AD";
 
+      case "Clone":
+        return "MY ADS";
+
       default:
         return "DASHBOARD";
     }

@@ -29,7 +29,9 @@ const LinksContainer = styled.ul`
   list-style: none;
   ${tw`
     flex
-    flex-col
+    flex-col 
+    mt-12
+    gap-5
     items-center
     px-5
    `}
@@ -38,7 +40,7 @@ const LinksContainer = styled.ul`
 const Link = styled.li`
   ${tw`
     
-  flex items-center justify-center mb-9 p-3.5
+  flex items-center justify-center p-3.5
   `}
   cursor:pointer;
 
@@ -46,6 +48,7 @@ const Link = styled.li`
     active &&
     css`
       background: #fff;
+
       ${tw`rounded-xl`}
     `}
 ` as any;

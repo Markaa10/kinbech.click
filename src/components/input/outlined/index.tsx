@@ -54,8 +54,7 @@ const OutlinedInput = (props: IOutlinedInputProps) => {
     placeholder = "Placeholder",
     marginTop = 0,
     type = "text",
-    marginBottom = 34,
-    width = "100%",
+    marginBottom = 2.125,
   } = props;
 
   return (
@@ -64,7 +63,6 @@ const OutlinedInput = (props: IOutlinedInputProps) => {
       alignItems="flex-start"
       marginTop={marginTop}
       marginBottom={marginBottom}
-      width={width}
     >
       <Label>{label}</Label>
 
