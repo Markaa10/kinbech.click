@@ -17,3 +17,6 @@ export { default as SignoutIcon } from "./SignoutIcon";
 export { default as PhoneIcon } from "./PhoneIcon";
 export { default as PinIcon } from "./PinIcon";
 export { default as ArrowDownIcon } from "./ArrowDownIcon";
+export { default as TrashIcon } from "./TrashIcon";
+export { default as EditIcon } from "./EditIcon";
+export { default as BalanceScaleIcon } from "./BalanceScaleIcon";

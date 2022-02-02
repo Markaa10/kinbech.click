@@ -19,19 +19,19 @@ function Footer() {
   ];
   return (
     <Container>
-      <Flex width="auto" style={{ margin: "0 71px" }}>
-        <Title5 style={{ width: "25%" }}>KINBECH.CLICK</Title5>
-        <Flex width="25%" justifyContent="flex-start">
+      <Flex justifyContent="space-between" style={{ margin: "0 71px" }}>
+        <Title5>KINBECH.CLICK</Title5>
+        <Flex gap={1} alignItems="center">
           <PhoneIcon />
-          <Body1 marginLeft={16}>202-555-0129</Body1>
+          <Body1>202-555-0129</Body1>
         </Flex>
-        <Flex width="25%" justifyContent="flex-start">
+        <Flex gap={1} alignItems="center">
           <EnvelopeIcon />
-          <Body1 marginLeft={16}>Kinbech.click@gmail.com</Body1>
+          <Body1>Kinbech.click@gmail.com</Body1>
         </Flex>
-        <Flex width="25%" justifyContent="flex-start">
+        <Flex gap={1} alignItems="center">
           <PinIcon />
-          <Body1 marginLeft={16}>San-Pablo, Calafornia, USA</Body1>
+          <Body1>San-Pablo, Calafornia, USA</Body1>
         </Flex>
       </Flex>
 

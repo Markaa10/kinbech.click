@@ -3,7 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 const Container = styled.button`
-  ${tw`py-2 px-5 bg-primary`};
+  ${tw`py-2 px-5 bg-primary `};
   border-radius: 10px;
   border: none;
   outline: none;

@@ -30,15 +30,15 @@ const Container = styled.div`
   ${tw`w-auto grid gap-x-16 gap-y-9 mx-12 my-11`};
 
   @media (min-width: 768px) {
-    ${tw`grid-cols-2`}
+    ${tw`grid-cols-2`};
   }
 
   @media (min-width: 1200px) {
-    ${tw`grid-cols-3`}
+    ${tw`grid-cols-3`};
   }
 
   @media (min-width: 1400px) {
-    ${tw`grid-cols-4`}
+    ${tw`grid-cols-4`};
   }
 `;
 

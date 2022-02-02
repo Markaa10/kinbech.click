@@ -10,7 +10,8 @@ type IOutlinedInputProps = {
   placeholder?: string;
   marginTop?: number;
   marginBottom?: number;
-  type?: "text" | "email" | "password";
+  type?: "text" | "email" | "password" | "number";
+  rest?: any;
 };
 
 const Label = styled(Body1)`
@@ -36,7 +37,7 @@ const InputContainer = styled.div`
 const Input = styled.input`
   border: none;
   outline: none;
-  width: 90%;
+  width: 100%;
 
   font-family: Telex;
   font-style: normal;
@@ -55,6 +56,7 @@ const OutlinedInput = (props: IOutlinedInputProps) => {
     marginTop = 0,
     type = "text",
     marginBottom = 2.125,
+    ...rest
   } = props;
 
   return (
@@ -63,6 +65,7 @@ const OutlinedInput = (props: IOutlinedInputProps) => {
       alignItems="flex-start"
       marginTop={marginTop}
       marginBottom={marginBottom}
+      {...rest}
     >
       <Label>{label}</Label>
 

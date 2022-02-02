@@ -6,10 +6,11 @@ import { LoginIllustration } from "assets/illustrations";
 import { EyeIcon } from "assets/icons";
 import Flex from "components/flex";
 import StandardInput from "components/input/standard";
-import { Title2, Body1, LinkText } from "components/texts";
+import { Title2, Body1 } from "components/texts";
 import Checkbox from "components/input/checkbox";
 import TextButton from "components/buttons/text";
 import Button from "components/buttons/button";
+import { colors } from "theme";
 
 type ILoginPageProps = { setIsSignup: any };
 
@@ -54,7 +55,7 @@ const LoginPage = (props: ILoginPageProps) => {
       <Image src={LoginIllustration} />
       <Form>
         <Title2>Welcome Back</Title2>
-        <Body1 marginTop={26} marginBottom={160}>
+        <Body1 marginTop={1.625} marginBottom={10}>
           Login as Salesman
         </Body1>
 
@@ -77,11 +78,18 @@ const LoginPage = (props: ILoginPageProps) => {
           marginBottom={48}
         />
 
-        <LinkText
-          text="Don’t have an account?"
-          link="Register here!"
-          onClick={() => setIsSignup(true)}
-        />
+        <Body1 color="#727272" onClick={() => setIsSignup(true)}>
+          Don’t have an account?{" "}
+          <span
+            style={{
+              color: colors.text,
+              borderBottom: "1px solid #373737",
+              cursor: "pointer",
+            }}
+          >
+            Register here!
+          </span>
+        </Body1>
       </Form>
     </Container>
   );

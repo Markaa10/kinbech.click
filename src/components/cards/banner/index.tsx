@@ -29,8 +29,10 @@ const BannerCard = () => {
   return (
     <Container>
       <Info>
-        <Title5 color="#fff">Hi Sagar, Welcome Back!</Title5>
-        <Body1 color="#fff" marginTop={19}>
+        <Body1 lineHeight={28} color="#fff">
+          Hi Sagar, Welcome Back!
+        </Body1>
+        <Body1 color="#fff" marginTop={1.1875}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam adipiscing elit, sed do eiusmod.

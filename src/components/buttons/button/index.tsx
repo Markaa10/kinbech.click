@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import tw from "twin.macro";
 
 type IButtonProps = {
   text: string;
@@ -16,10 +17,10 @@ type IContainerProps = {
 };
 
 const Container = styled.button<IContainerProps>`
-  width: ${(p) => p.width};
   height: 56px;
   background: linear-gradient(180deg, #4cacfc -12.5%, #3946f5 100%);
-  border-radius: 5px;
+  border-radius: 10px;
+
   border: none;
   outline: none;
   margin-top: ${(p) => p.marginTop}px;
@@ -33,12 +34,15 @@ const Container = styled.button<IContainerProps>`
   letter-spacing: 0.1em;
 
   color: #ffffff;
+  white-space: nowrap;
+
+  ${tw`py-1.5 px-5 cursor-pointer`};
 `;
 
 const Button = (props: IButtonProps) => {
   const {
     text,
-    width = "100%",
+    width = "auto",
     marginTop = 0,
     marginBottom = 0,
     OnClick = () => console.log("Button"),

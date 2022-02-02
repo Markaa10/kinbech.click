@@ -5,31 +5,46 @@ import SidebarContainer from "containers/sidebar";
 import SalesmanDashboardContainer from "containers/salesman/dashboard";
 import PostAdContainer from "containers/salesman/postad";
 import MyAdsContainer from "containers/salesman/myads";
+import CartContainer from "containers/salesman/cart";
+import MobileverificationContainer from "containers/salesman/mobileverification";
+import CommentsContainer from "containers/salesman/comments";
+import ChangeInformationContainer from "containers/salesman/changeinformation";
+import ChangePasswordContainer from "containers/salesman/changepassword";
 
 import Navbar from "components/navbar";
 import Footer from "components/footer";
+import Flex from "components/flex";
 
-const Container = styled.div`
-  ${tw`
-    flex
-    items-start
-    w-full
-  `}
-`;
+const Container = styled(Flex)``;
 
 function SalesmanDashboardPage() {
-  const [view, setView] = useState<string>("Home");
+  const [view, setView] = useState<string>("Dashboard");
 
   const getView = () => {
     switch (view) {
-      case "Home":
+      case "Dashboard":
         return <SalesmanDashboardContainer />;
 
-      case "Cart":
+      case "Postad":
         return <PostAdContainer />;
 
-      case "Clone":
+      case "Myads":
         return <MyAdsContainer />;
+
+      case "Cart":
+        return <CartContainer />;
+
+      case "MobileVerification":
+        return <MobileverificationContainer />;
+
+      case "Comments":
+        return <CommentsContainer />;
+
+      case "Changeinformation":
+        return <ChangeInformationContainer />;
+
+      case "Changepassword":
+        return <ChangePasswordContainer />;
 
       default:
         return <h1>Default</h1>;
@@ -40,12 +55,7 @@ function SalesmanDashboardPage() {
     <Container>
       <SidebarContainer setView={setView} />
       <div
-        style={{
-          width: "100%",
-          maxHeight: "100vh",
-          overflow: "scroll",
-          overflowX: "hidden",
-        }}
+        style={{ marginLeft: "5.5rem", background: "#E5E5E5", width: "100%" }}
       >
         <Navbar view={view} />
         {getView()}

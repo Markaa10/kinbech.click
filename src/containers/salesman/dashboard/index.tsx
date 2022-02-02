@@ -10,9 +10,10 @@ import {
   PiechartIcon,
   PuzzlePieceIcon,
 } from "assets/icons";
-import { Body1, Title5 } from "components/texts";
+import { Body1, Body4, Title5 } from "components/texts";
 import { colors } from "theme";
 import Checkbox from "components/input/checkbox";
+import Flex from "components/flex";
 
 const Container = styled.div`
   ${tw`w-auto mx-11`}
@@ -22,16 +23,17 @@ const TopContainer = styled.section`
   ${tw`flex justify-between my-11`}
 `;
 
-const BottomContainer = styled.section`
-  ${tw`flex justify-between mb-5`}
+const BottomContainer = styled(Flex)`
+  ${tw`justify-between mb-12`};
+  gap: 2.5rem;
 `;
 
 const RightCards = styled.section`
   ${tw`mr-11`}
 `;
 
-const InfoContainer = styled.div`
-  ${tw`flex items-center justify-between mt-10`};
+const InfoContainer = styled(Flex)`
+  ${tw`items-center justify-between mt-10 w-full`};
   border-bottom: 1px solid #9099d3;
 `;
 
@@ -104,22 +106,17 @@ function SalesmanDashboardContainer() {
         </RightCards>
       </TopContainer>
       <BottomContainer>
-        <InfoCard width="40%" icon={<PiechartIcon />} title="Account Status">
+        <InfoCard icon={<PiechartIcon />} title="Account Status">
           {info.map((item: any) => (
             <InfoContainer key={item.id}>
-              <Body1 marginLeft={10} color="#373737">
+              <Body4 lineHeight={21} color="#373737">
                 {item.title}
-              </Body1>
+              </Body4>
               <Title5 color={colors.primary}>{item.status}</Title5>
             </InfoContainer>
           ))}
         </InfoCard>
-        <InfoCard
-          width="55%"
-          icon={<EnvelopeIcon />}
-          title="Messages"
-          action="View All"
-        >
+        <InfoCard icon={<EnvelopeIcon />} title="Messages" action="View All">
           {messages.map((item) => (
             <MessageContainer key={item.id}>
               <Checkbox label={item.message} />

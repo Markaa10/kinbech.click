@@ -18,11 +18,11 @@ import {
 
 const Container = styled.nav`
   ${tw`
-    
-    bg-primary h-screen
-    max-h-screen
-    min-h-screen
-  `}
+    bg-primary 
+    h-screen
+    fixed
+    left-0
+  `};
 `;
 
 const LinksContainer = styled.ul`
@@ -59,67 +59,63 @@ function SidebarContainer(props: ISidebarContainerProps) {
 
   const navigate = useNavigate();
 
-  const [activeLink, setActiveLink] = useState<string>("Home");
+  const [activeLink, setActiveLink] = useState<string>("Dashboard");
 
   const links = [
     {
       id: 1,
       icon: (
         <HomeIcon
-          style={{ color: activeLink === "Home" ? colors.primary : "#fff" }}
+          style={{
+            color: activeLink === "Dashboard" ? colors.primary : "#fff",
+          }}
         />
       ),
-      title: "Home",
+      title: "Dashboard",
     },
     {
       id: 2,
       icon: (
         <CartIcon
-          style={{ color: activeLink === "Cart" ? colors.primary : "#fff" }}
+          style={{ color: activeLink === "Postad" ? colors.primary : "#fff" }}
         />
       ),
-      title: "Cart",
+      title: "Postad",
     },
     {
       id: 3,
       icon: (
         <CloneIcon
-          style={{ color: activeLink === "Clone" ? colors.primary : "#fff" }}
+          style={{ color: activeLink === "Myads" ? colors.primary : "#fff" }}
         />
       ),
-      title: "Clone",
+      title: "Myads",
     },
     {
       id: 4,
       icon: (
         <AddressCardIcon
           style={{
-            color: activeLink === "AddressCard" ? colors.primary : "#fff",
+            color: activeLink === "Cart" ? colors.primary : "#fff",
           }}
         />
       ),
-      title: "AddressCard",
+      title: "Cart",
     },
     {
       id: 5,
       icon: (
         <MobileIcon
-          style={{ color: activeLink === "Mobile" ? colors.primary : "#fff" }}
+          style={{
+            color:
+              activeLink === "MobileVerification" ? colors.primary : "#fff",
+          }}
         />
       ),
-      title: "Mobile",
+      title: "MobileVerification",
     },
     {
-      id: 5,
-      icon: (
-        <UserIcon
-          style={{ color: activeLink === "User" ? colors.primary : "#fff" }}
-        />
-      ),
-      title: "User",
-    },
-    {
-      id: 5,
+      id: 6,
       icon: (
         <CommentsIcon
           style={{ color: activeLink === "Comments" ? colors.primary : "#fff" }}
@@ -128,13 +124,25 @@ function SidebarContainer(props: ISidebarContainerProps) {
       title: "Comments",
     },
     {
-      id: 5,
+      id: 7,
       icon: (
-        <CogIcon
-          style={{ color: activeLink === "Cog" ? colors.primary : "#fff" }}
+        <UserIcon
+          style={{
+            color: activeLink === "Changeinformation" ? colors.primary : "#fff",
+          }}
         />
       ),
-      title: "Cog",
+      title: "Changeinformation",
+    },
+
+    {
+      id: 8,
+      icon: (
+        <CogIcon
+          style={{ color: activeLink === "Changepassword" ? colors.primary : "#fff" }}
+        />
+      ),
+      title: "Changepassword",
     },
   ];
 

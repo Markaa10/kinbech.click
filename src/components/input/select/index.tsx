@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Flex from "components/flex";
 
-type ISelectInputProps = { label: string };
+type ISelectInputProps = { label: string; rest?: any };
 
 const Label = styled(Body1)`
   color: #373737;
@@ -21,11 +21,9 @@ const Select = styled.select`
   border-radius: 5px;
 `;
 
-const SelectInput = (props: ISelectInputProps) => {
-  const { label } = props;
-
+const SelectInput = ({ label, ...rest }: ISelectInputProps) => {
   return (
-    <Flex direction="column">
+    <Flex direction="column" {...rest}>
       <Label>{label}</Label>
       <Select>
         <option>Nepal</option>

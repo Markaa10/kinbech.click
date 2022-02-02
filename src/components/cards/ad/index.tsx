@@ -1,7 +1,8 @@
 import { ArrowDownIcon } from "assets/icons";
-import { Title5, Title6 } from "components/texts";
+import { Body3, Title5, Title6 } from "components/texts";
 import React from "react";
 import styled from "styled-components";
+import { colors } from "theme";
 import tw from "twin.macro";
 
 const Container = styled.div`
@@ -19,9 +20,9 @@ function AdCard(props: IAdCardProps) {
   return (
     <Container>
       <img src={icon} alt="icon" />
-      <Title6 marginTop={20} marginBottom={20}>
+      <Body3 color={colors.text} marginTop={1.25} marginBottom={1.25}>
         {title}
-      </Title6>
+      </Body3>
       <ArrowDownIcon />
     </Container>
   );

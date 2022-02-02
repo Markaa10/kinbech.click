@@ -4,45 +4,47 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import ActionButton from "components/buttons/action";
+import { colors } from "theme";
+import Flex from "components/flex";
+import Button from "components/buttons/button";
 
-interface IContainerProps {
-  width: string;
-}
-const Container = styled.div<IContainerProps>`
-  ${tw`p-3`};
-  width: ${(p) => p.width};
+const Container = styled.div`
+  ${tw`py-5 px-4 w-full`};
 
+  background: #ffffff;
   box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 `;
 
-const Header = styled.div`
-  ${tw`flex items-center justify-between pb-5`};
+const Header = styled(Flex)`
+  ${tw`items-center pb-5 justify-between`};
+
   border-bottom: 1px solid #9099d3;
 `;
 
-const HeaderRight = styled.section`
-  ${tw`inline-flex`}
+const HeaderRight = styled(Flex)`
+  ${tw`items-center gap-11 `};
 `;
 
 type IInfoCardProps = {
   title: string;
   icon: JSX.Element;
   action?: string;
-  width?: string;
   children?: JSX.Element | JSX.Element[];
+  rest?: any;
 };
-function InfoCard(props: IInfoCardProps) {
-  const { title, icon, action, children, width = "100%" } = props;
-
+function InfoCard({ title, icon, action, children, ...rest }: IInfoCardProps) {
   return (
-    <Container width={width}>
+    <Container {...rest}>
       <Header>
         <HeaderRight>
           {icon}
-          <Title5 marginLeft={42}>{title}</Title5>
+          <Body1 lineHeight={28.88} color={colors.primary}>
+            {title}
+          </Body1>
         </HeaderRight>
-        {action && <ActionButton text={action} />}
+
+        <>{action && <Button text={action} />}</>
       </Header>
 
       {children}

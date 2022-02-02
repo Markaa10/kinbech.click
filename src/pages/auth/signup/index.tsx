@@ -47,39 +47,54 @@ const SignupPage = (props: ISignupPageProps) => {
     >
       <Form>
         <Title2>Register Here</Title2>
-        <Body1 marginTop={26} marginBottom={62}>
+        <Body1 marginTop={1.625} marginBottom={3.875}>
           Signup as Salesman
         </Body1>
 
-        <OutlinedInput label="Full Name" placeholder="Sagar Ghimire" />
+        <OutlinedInput
+          label="Full Name"
+          width="100%"
+          placeholder="Sagar Ghimire"
+        />
         <OutlinedInput
           label="Email"
+          width="100%"
           type="email"
           placeholder="sagar.ghimire001@gmail.com"
         />
         <OutlinedInput
           label="Password"
+          width="100%"
           placeholder="*********"
           type="password"
           icon={<EyeIcon />}
         />
         <OutlinedInput
           label="Confirm Password"
+          width="100%"
           placeholder="*********"
           type="password"
           icon={<EyeIcon />}
         />
 
-        <Flex gap={2.6}>
+        <Flex gap={2.6} width="100%">
           <SelectInput label="Country" />
-          <OutlinedInput label="Phone" placeholder="01-552860" />
+          <OutlinedInput label="Phone" width="100%" placeholder="01-552860" />
         </Flex>
 
-        <OutlinedInput label="Mobile" placeholder="+977 9841468940" />
+        <OutlinedInput
+          label="Mobile"
+          width="100%"
+          placeholder="+977 9841468940"
+        />
 
-        <Flex gap={2.6}>
-          <OutlinedInput label="Street" placeholder="Harisiddhi-8" />
-          <OutlinedInput label="City" placeholder="Lalitpur" />
+        <Flex gap={2.6} width="100%">
+          <OutlinedInput
+            width="100%"
+            label="Street"
+            placeholder="Harisiddhi-8"
+          />
+          <OutlinedInput width="100%" label="City" placeholder="Lalitpur" />
         </Flex>
 
         <Checkbox

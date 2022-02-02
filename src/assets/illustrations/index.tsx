@@ -21,3 +21,5 @@ export { default as PhoneIllustration } from "./phone.svg";
 export { default as PlaneDepartureIllustration } from "./plane-departure.svg";
 export { default as RunningIllustration } from "./running.svg";
 export { default as SignIllustration } from "./sign.svg";
+export { default as ChangeIllustration } from "./change.svg";
+export { default as ChangePasswordIllustration } from "./change-password.svg";

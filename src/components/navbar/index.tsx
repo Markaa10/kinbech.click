@@ -2,18 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-import { CaptionText, Title2, Title3 } from "components/texts";
+import { CaptionText, Title2, Title3, Title5 } from "components/texts";
 import StandardInput from "components/input/standard";
 import { BellIcon, EnvelopeIcon, SearchIcon } from "assets/icons";
 import { user } from "assets/images";
+import { colors } from "theme";
 
 const Container = styled.nav`
-  ${tw`flex 
-  items-center
-   justify-between
-    px-2
-     py-3.5
-      w-auto`}
+  ${tw`flex w-full  items-center   justify-between    
+  px-5     
+  py-3.5      
+  `}
 
   background: #FFFFFF;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
@@ -58,11 +57,26 @@ function Navbar(props: INavbarProps) {
       case "Home":
         return "DASHBOARD";
 
-      case "Cart":
+      case "Postad":
         return "POST AD";
 
-      case "Clone":
+      case "Myads":
         return "MY ADS";
+
+      case "Cart":
+        return "CART";
+
+      case "MobileVerification":
+        return "MOBILE VERIFICATION";
+
+      case "Comments":
+        return "COMMENTS";
+
+      case "Changeinformation":
+        return "CHANGE INFORMATION";
+        
+      case "Changepassword":
+        return "CHANGE PASSWORD";
 
       default:
         return "DASHBOARD";
@@ -71,7 +85,7 @@ function Navbar(props: INavbarProps) {
 
   return (
     <Container>
-      <Title3>{getView()}</Title3>
+      <Title5 color={colors.primary}>{getView()}</Title5>
 
       <ActionsContainer>
         <StandardInput placeholder="Search" icon={<SearchIcon />} />
